@@ -22,7 +22,8 @@
   "license": "LGPL-3.0-or-later",
   "scripts": {
     "clean": "rm -rf dist/",
-    "build": "npm run clean && rollup --config rollup.config.mjs",
+    "clean:Win": "rmdir /s /q dist\\",
+    "build": "npm run clean:Win && rollup --config rollup.config.mjs",
     "prepublishOnly": "npm run build",
     "lint": "eslint \"lib/**/*.mjs\" test/* examples/* rollup.config.mjs",
     "test": "npm run lint && npm run build && npm run test:esm && npm run test:cjs",
